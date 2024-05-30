@@ -5,30 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astro Arc Click</title>
-    <link rel="stylesheet" href="output.css">
     <link rel="stylesheet" href="https://stijndv.com/fonts/Eudoxus-Sans.css">
+    <link rel="stylesheet" href="output.css">
+    <script src="app.js" defer></script>
 </head>
 
-<body class="flex flex-col bg-slate-800 w-screen min-h-screen items-center overflow-hidden">
-    <nav class="w-90vw sm:px-16 px-6 py-8 relative" style="opacity: 1; transform: none;">
+<body class="flex flex-col bg-slate-900 w-screen min-h-screen items-center overflow-x-hidden">
+    <nav class="w-full sm:px-16 px-6 py-8 relative">
         <div class="absolute w-[50%] inset-0 gradient-01"></div>
-        <div class="2xl:max-w-[1280px] w-full mx-auto flex justify-between gap-8">
-            <h2 class="font-extrabold text-[24px] leading-[30.24px] text-white">ASTROARC</h2>
-            <div class="flex gap-4"><img src="https://astroarcade.vercel.app/twitter.svg" alt="twitter"
-                    class="w-[24px] h-[24px] object-contain cursor-pointer"><img
-                    src="https://astroarcade.vercel.app/linkedin.svg" alt="linkedin"
-                    class="w-[24px] h-[24px] object-contain cursor-pointer"></div>
+        <div class="2xl:max-w-[1280px] w-full mx-auto flex justify-between items-center gap-8">
+            <h2 class="font-extrabold text-xl leading-[30.24px] text-white whitespace-nowrap">ASTROARC</h2>
+            <div class="flex gap-4">
+                <img src="https://astroarcade.vercel.app/twitter.svg" alt="twitter" class="w-[24px] h-[24px] object-contain cursor-pointer">
+                <img src="https://astroarcade.vercel.app/linkedin.svg" alt="linkedin" class="w-[24px] h-[24px] object-contain cursor-pointer">
+            </div>
         </div>
-    </nav> <!-- change the twitter and linked in links -->
+        <div class="mt-5 h-[2px] bg-white opacity-10"></div>
+    </nav>
 
-
-
-
-
-<footer class="w-80vw">
-        <div class="flex flex-col"><div class="mb-[50px] h-[2px] bg-white opacity-10"></div><div class="flex items-center justify-between flex-wrap gap-4"><h4 class="font-extrabold text-[24px] text-white">AstroArcade</h4><p class="font-normal text-[14px] text-white opacity-50">Copyright © 2021 - 2022 AstroArcade. All rights reserved.</p></div></div>
-</footer>    
-
+    <main class="flex w-full sm:w-3/4 lg:w-1/2 min-h-fit p-6 flex-col items-center gap-8 py-10 bg-slate-800 rounded-md shadow-xl max-w-lg mx-auto">
+        <div class="w-full flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="current-score w-full sm:w-1/2 text-center text-xl font-bold text-white border border-gray-500 p-4 rounded-md whitespace-nowrap">
+                Score: 0
+            </div>
+            <div class="remaining-count w-full sm:w-1/2 text-center text-xl font-bold text-white border border-gray-500 p-4 rounded-md whitespace-nowrap">
+                Remaining: 500
+            </div>
+        </div>
+        <div class="progressBar w-full min-h-10 bg-white rounded-3xl flex relative border-white border-4 overflow-hidden">
+            <div class="progressStatus absolute inset-0 flex justify-center items-center text-black">500/500</div> 
+            <div class="progress h-10 bg-green-500 rounded-3xl" style="width: 0%;"> 
+            </div>
+        </div>
+        <div class="clickingArea border border-sky-100 p-8 sm:p-16 rounded-md min-w-fit overflow-hidden cursor-pointer text-center text-white">
+            Click here to mine!
+        </div>
+    </main>
+    <div class="cooldown-message hidden text-center text-red-500 bg-red-100 rounded-md mt-4 px-5 py-8"></div>
+    <footer class="flex flex-col items-center justify-center mt-8">
+        <div class="h-px w-full bg-white opacity-10 my-4"></div>
+        <div class="flex flex-col items-center gap-4 text-white">
+            <h4 class="font-extrabold text-lg">AstroArcade</h4>
+            <p class="font-normal text-sm opacity-50 text-center">Copyright © 2021 - 2022 AstroArcade. All rights reserved.</p>
+        </div>
+    </footer>    
 </body>
 
 </html>
